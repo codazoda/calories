@@ -1,0 +1,53 @@
+1.9
+
+- Added equations (125+125) from 2.0 branch.
+
+1.8
+
+- CalorieCalculator.mobi version.
+
+1.7
+
+- Removed install page.
+- Added install dialog.
+
+1.6
+
+- Added unlock code.
+- Updated shareware dialog to be more persistent.
+- Fixed non-numeric character entry.
+
+1.5.1
+
+- Adjusted analytics.
+
+1.5
+
+- Added AJAX analytics.
+
+1.4
+
+- Fixed 7-day history bug.
+
+1.3
+
+- Keep 7-days of calorie history (for future updates).
+- Show yesterdays total.
+
+1.2
+
+- Changed contact email address to JavaScript.
+- Added version number to top-right corner.
+
+1.1
+
+- Added Google Analytics.
+
+1.0
+
+- New interface design.
+- Faster data entry.
+- HTML5 caching for offline use.
+- HTML5 data storage instead of cookies.
+- New icon and splash screen.
+- This version is shareware.
