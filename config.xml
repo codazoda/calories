@@ -2,14 +2,10 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.joelryan.calories"
-        versionCode="111" 
-        version   = "1.11.0">
+        versionCode="112" 
+        version   = "1.12.0">
 
-    <gap:platform name="ios" />
-    <!--
     <gap:platform name="android" />
-    <gap:platform name="winphone" />
-    -->
 
     <name>Quick Calories</name>
 
