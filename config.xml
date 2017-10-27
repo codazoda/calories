@@ -33,8 +33,8 @@
     <gap:splash src="images/splash_640x1136.png" gap:platform="ios" width="640" height="1136" />
     
     <!-- Plugins -->
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="com.phonegap.plugin.statusbar" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.2.3" />
     
     <preference name="webviewbounce" value="false" />
     
