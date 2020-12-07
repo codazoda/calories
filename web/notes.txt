@@ -1,0 +1,15 @@
+I'm a software developer and I want to change peoples lives with a better calorie tracker.
+
+Years ago I wrote a calorie tracking app. I wrote it for myself after I had tried half a dozen others and failed to continue using them. With my own app I was able to track nearly everything I ate for 6 months with very little effort. It's only feature is allowing you to record the NUMBER of calories you ate instead of looking up foods. Nearly every food package, ingredient, and menu board now has calories listed on it. It's more easy than ever to log calories.
+
+I never promoted it much and it was never very popular but I did get an email from a guy who thanked me and said that he had lost over 100 pounds. The software had played a part in him changing his life. That feels good.
+
+As I think about counting calories again I find myself repeating the same pattern. Nothing in the app stores seems to work for me and it's probably time to give my app a refresh. That, however, will take a lot of work.
+
+Because of the time investment, I'd like to sell my app. Probably not for a dollar or two but tens of dollars. Maybe even a small monthly subscription.
+
+With hundreds of competing apps and websites, I wonder if my little app could ever compete. I'm convinced, however, that it's a faster, easier way to track calories that most of us could actually stick to.
+
+Tell a story...
+
+A long time ago I decided to lose weight. The first step was to count calories.

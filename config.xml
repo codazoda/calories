@@ -37,6 +37,7 @@
     <plugin name="cordova-plugin-statusbar" spec="~2.2.3" />
     
     <preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
     
     <preference name="permissions" value="none" />
 

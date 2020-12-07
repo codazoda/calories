@@ -1,0 +1,25 @@
+{
+    "name": "Quick Calories",
+    "short_name": "Calories",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "silver",
+    "description": "A worlds fastest calorie tracker.",
+    "icons": [{
+      "src": "icon/icon_57x57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    }, {
+        "src": "icon/icon_72x72.png",
+        "sizes": "72x72",
+        "type": "image/png"
+    }, {
+        "src": "icon/icon_76x76.png",
+        "sizes": "76x76",
+        "type": "image/png"
+    }, {
+        "src": "icon/icon_120x120.png",
+        "sizes": "120x120",
+        "type": "image/png"
+    }]
+  }
