@@ -1,163 +1,29 @@
 <!DOCTYPE html>
 
-<html manifest="cache.manifest">
-
 <head>
 
-	<title>Calories</title>
+    <title>Quick Calories</title>
 
-	<!-- Meta Tags -->
-	<meta charset=UTF-8>
-	<meta name="robots" content="index, follow" />
+    <link rel="stylesheet" type="text/css" href="neat.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
 
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-
-	<!-- Progressive Web App -->
-	<link rel="manifest" href="/manifest.webmanifest">
-
-	<!-- iPhone Specific -->
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<link rel="apple-touch-icon" href="http://www.joeldare.com/i/calories/images/icon.png" /> <!-- 57x57 or 112x112 Icon -->
-	<link rel="apple-touch-startup-image" href="images/splash.png" /> <!-- 320x460 Splash Screen  -->
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<!--
-	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	-->
-
-	<!-- JavaScript : Embedded -->
-	<script type="text/javascript" src="analytics.js"></script>
-	<script type="text/javascript" src="calories.js"></script>
-	<script type="text/javascript" src="quickuser.js"></script>
-
-	<!-- CSS -->
-	<style type="text/css">
-	<!--
-
-		p { margin-bottom: 10px; }
-		h1 { font-size: 12px; margin-bottom: 10px; }
-		a { color: black; text-decoration: none; }
-		img { border: 0; }
-		#titlebar { background-color: black; color: white; text-align: center; height: 44px; line-height: 44px; font-weight: bold; font-size: 1.5em; }
-		#version { float: left; line-height: 44px; color: white; font-size: 0.5em; margin-left: 20px; }
-		#icon { float: right; line-height: 44px; margin-right: 20px; }
-		body { min-height: 406px; margin: 0; padding: 0; font-family: sans-serif; font-size: 14px; background-color: silver; }
-		table { width: 100%; }
-		.num { text-align: right; }
-		.total { font-weight: bold; }
-		#footer { font-size: 10px; text-align: center; }
-		.toolbar { float: left; width: 25%; text-align: center; margin-bottom: 10px; }
-		#calForm { margin-bottom: 15px; }
-		#navigation { margin: 10px 10px 0 10px;}
-		#report { margin: 10px; }
-		#pgCols { margin: 10px; }
-		#help { display: none; margin: 10px; }
-		.button { width: 100%; height: 40px; line-height: 40px; text-align: center; -webkit-border-radius: 10px; background-color: white; border: 1px solid grey; }
-		.small_button { float: left; padding-left: 10px; padding-right: 10px; height: 40px; line-height: 40px; text-align: center; -webkit-border-radius: 10px; background-color: white; border: 1px solid grey; }
-		#shareware { display: none; position: fixed; width: 80%; background-color: black; margin-top: 10px; margin-left: 10%; margin-right: 10%; -webkit-border-radius: 10px; }
-		#shareware p { margin-left: 10px; margin-right: 10px; color: white; }
-		#shareware h2 { color: white; text-align: center; font-size: 1.125em; }
-		#installer { display: none; position: absolute; width: 228px; background-color: white; border: 1px solid black; -webkit-border-radius: 10px; margin-left: 35px; margin-top: 50px; text-align: center; }
-		#installer em { color: grey; }
-		#container { max-width: 500px; margin-left: auto; margin-right: auto; background-color: silver; }
-	
-	-->
-	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 <body>
 
-	<div id="container">
+    <h1 class="hero center">Quick Calories</h1>
 
-		<!-- ::::::::::::::::::::::::::::::::::::::::::::::: TITLE BAR ::::: -->
+    <p class="center">The Worlds Fastest Calorie Tracker</p>
 
-		
-		<div id="titlebar">
-			<span id="version" title="Current Version">
-			1.11
-			</span>
-			<span>
-			Calories
-			</span>
-			<span id="icon">
-			<a href="mailto:joel@joeldare.com?subject=Quick Calories Feedback"><img src="images/email.png" title="Email Author" style="width: 22px; height: 22px; margin-top: 10px;"></a>
-			</span><!-- icon -->
-		</div><!-- titlebar -->
-
-		<!-- ::::::::::::::::::::::::::::::::::::::::: NAVIGATION FORM ::::: -->
-		<div id="navigation">
-		
-			<div id="addButton" class="button">
-				Add Count
-			</div>
-
-			<div id="calBox" style="text-align: center; display: none;">
-				<input name="cal" id="calInput" type="text" pattern="/\d|\+|-+/" style="width: 94%; height: 33px; font-size: 18px;">
-			</div>
-					
-		</div><!-- navigation -->
-
-		<div id="report">
-			<table>
-				<tr>
-					<td class="total">Total</td>
-					<td class="num total" id="pgTotal">?</td>
-				</tr>
-				<tr>
-					<td>Yesterday</td>
-					<td style="text-align: right;" id="pgYesterday">?</td>
-				</tr>
-			</table>
-			<hr>
-		</div><!-- report -->
-		<div id="pgCols">
-			<table>
-				<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-			</table>
-		</div><!-- pgCols -->
-		
-		<div id="help">
-		
-			<div id="installer">
-		
-				<p>To install:</p>
-		
-				<p>Tap the <em>+</em> icon below<br>
-				then choose<br>
-				<em>Add to Home Screen</em></p>
-				<p><img src="images/down_arrow.png" style="width: 32px; height: 32px; margin-top: 10px;" /></p>
-	
-			</div>
-		
-			<p>To track your calories, simply click the <em>Add Count</em>
-			button, enter the number of calories, then click <em>done</em>.</p>
-			
-			<p>This app is designed to be <em>fast</em>.  After counting
-			calories for a short time you'll start to memorize counts for many 
-			of the foods you eat. This app lets you record those numbers and
-			get on with your life.</p>
-
-			<p>Add it to your home screen and it will be available even when 
-			you're offline (if you're using a modern mobile browser that 
-			supports progressive web apps).</p>
-			
-			<p>
-			- Enter negative calories for exercise (-100)<br />
-			- Enter equations (250+250+125 or 80*2.5)
-			</p>
-			
-		</div><!-- help -->
-
-		<div id="footer">
-			<p>
-				ID: <span id="pgUserId">?</span>
-			</p>
-		</div><!-- footer -->
-
-	</div><!-- container -->
+    <div class="center" style="margin-top: 50px; margin-bottom: 50px;">
+        <a href="https://calories.joeldare.com/app" class="button light" target="_blank">Try Free</a>
+        <a href="https://gum.co/calories?wanted=true" class="button main">Buy Now</a>
+    </div>
+    
+    <img src="calories.png">
 
 </body>
-	
+
 </html>

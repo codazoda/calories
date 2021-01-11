@@ -4,7 +4,7 @@
     "start_url": ".",
     "display": "standalone",
     "background_color": "silver",
-    "description": "A worlds fastest calorie tracker.",
+    "description": "The worlds fastest calorie tracker.",
     "icons": [{
       "src": "icon/icon_57x57.png",
       "sizes": "57x57",

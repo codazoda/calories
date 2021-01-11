@@ -2,18 +2,10 @@
 window.onload = function() {
 	// Initialize
 	init();
-	// If it was launched from the home screen
-    /*
-	if (navigator.platform == 'iPhone' && !window.navigator.standalone) {
-	   showInstaller();
-	}
-	*/
 }
 
 // Initialize
 function init() {
-	// Log this in Google Analytics
-	_gaq.push(['_trackEvent', 'AJAX', 'Page', 'Calories']);
 	// Load a user using the QuickUser class
 	user = new QuickUser();
 	// Setup todays date
@@ -23,8 +15,6 @@ function init() {
 	var lastWeekNum = todayNum - 7;
 	// If this is the first run
 	if (user.get("first") === undefined) {
-		// Log this in Google Analytics
-		_gaq.push(['_trackEvent', 'AJAX', 'Stats', 'First Run']);
 		user.set("first", today);
 		user.set("shared", todayNum);
 	}
@@ -64,16 +54,6 @@ function rollHistory() {
 	user.set("day3", user.get("day2"));
 	user.set("day2", user.get("day1"));
 	user.set("day1", user.get("total"));
-}
-
-// Show install instructions
-function showInstaller() {
-	// Log this in Google Analytics
-	_gaq.push(['_trackEvent', 'AJAX', 'Page', 'Installer']);
-	// Show the installer
-	document.getElementById("installer").style.display = "block";
-	// Hide it in a few seconds
-	setTimeout("document.getElementById('installer').style.display = 'none'", 8000);
 }
 
 // Function to update the page based on the current user data
@@ -145,8 +125,6 @@ function clearUrl() {
 
 // Function to submit the form
 function submitForm() {
-	// Log this in Google Analytics
-	_gaq.push(['_trackEvent', 'AJAX', 'Action', 'Add Calories']);
 	// Grab a pointer to the element	
 	var calInput = document.getElementById("calInput");
 	// Grab the input
