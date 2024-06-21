@@ -24,6 +24,7 @@ img {
 
 .main {
     background-color: #0066CC;
+    color: var(--dark);
 }
 
 /* Desktop sizes */
