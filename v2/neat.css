@@ -94,7 +94,7 @@ button + button, .button + .button, input[type=submit] + input[type=submit] {
 }
 
 .bordered {
-    border: 3px solid;
+    border: 3px solid var(--dark);
 }
 
 .home {

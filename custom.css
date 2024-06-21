@@ -25,3 +25,10 @@ img {
 .main {
     background-color: #0066CC;
 }
+
+/* Desktop sizes */
+@media (min-width: 600px) {
+    img {
+        width: 50%;
+    }
+}

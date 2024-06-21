@@ -1,0 +1,72 @@
+:root {
+    --faded: #777;
+    border-top: none;
+}
+
+input {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+.header {
+    display: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.today {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.yesterday {
+    font-size: large;
+    color: inherit;
+    margin-top: 1rem;
+}
+
+.yesterday div {
+    color: var(--faded);
+}
+
+#help {
+    display: none;
+}
+
+.right {
+    display: block;
+    margin-left: auto;
+    text-align: right;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 100%;
+}
+
+/* Make everything in a row a column */
+.row > * {
+    display: block;
+    flex: 1 1 auto;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Desktop sizes */
+@media (min-width: 600px) {
+    input {
+        width: 50%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --faded: #777;
+    }
+}
