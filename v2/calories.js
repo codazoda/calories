@@ -7,16 +7,14 @@ window.onload = function() {
 
 // Compare the current date to the date stored for the user and reset if they are off 
 function checkForNewDay() {
-	let myDay = new Date();
-	let today = (myDay.getMonth()+1) + "/" + myDay.getDate() + "/" + myDay.getFullYear();
+	let today = getDay(new Date());
 	if (user.get("today") != today) {
 		init();
 	}
 }
 
-function getDay() {
-	var myDay = new Date();
-	var today = (myDay.getMonth()+1) + "/" + myDay.getDate() + "/" + myDay.getFullYear();
+function getDay(date) {
+	var today = (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
 	return today;
 }
 
@@ -25,23 +23,18 @@ function init() {
 	// Load a user using the QuickUser class
 	user = new QuickUser();
 	// Setup todays date
-	var myDay = new Date();
-	var today = (myDay.getMonth()+1) + "/" + myDay.getDate() + "/" + myDay.getFullYear();
-	var todayNum = myDay.getFullYear() + (myDay.getMonth()+1) + myDay.getDate();
+	var today = getDay(new Date());
+	console.info(today);
 	// If this is the first run save the date
 	if (user.get("first") === undefined) {
 		user.set("first", today);
 	}
-	// Set yesterday to zero if it's undefined
-	if(user.get("yesterday") == undefined) user.set("yesterday", 0);
 	// If it's old, set it to blank
 	if (user.get("today") != today) {
 		// Reset everything
 		user.set("today", today);
 		user.set("total", 0);
-		user.set(today, 0);
 		user.set("log", "");
-console.info("Saved value to " + today + " key.");
 	}
 	// Update the page
 	updatePage();
@@ -75,16 +68,18 @@ function updatePage() {
 }
 
 function setupEvents() {
-	document.getElementById("calInput").onkeyup = function(e) {
-		if (e.keyCode == 13) {
-			//submitForm();
-			document.getElementById("calInput").blur();
-		}
-		// Fix non numeric values
-		removeNonNum(this);
-	};
-	document.getElementById("calInput").onblur = handleInputBlur;
-	document.getElementById("calInput").onfocus = handleInputFocus;
+	const input = document.getElementById("calInput");
+	
+	// Add event listeners to the input element
+	input.addEventListener("keydown", function(e) {
+	  if (e.key === "Enter") {
+		input.blur();
+	  }
+	  removeNonNum(this);
+	});
+	
+	input.addEventListener("blur", handleInputBlur);
+	input.addEventListener("focus", handleInputFocus);
 }
 
 function handleInputBlur() {
@@ -135,6 +130,7 @@ function clearUrl() {
 
 // Function to submit the form
 function submitForm() {
+	console.log("Submitted");
 	// Grab a pointer to the element	
 	var calInput = document.getElementById("calInput");
 	// Grab the input
@@ -151,6 +147,10 @@ function submitForm() {
 	if (theValue != 0) {
 		// Add to the user total
 		user.set("total", user.get("total") + theValue);
+		// Save the total to the dated value
+		var today = getDay(new Date());
+		user.set(today, user.get("total"));
+		console.info("Saved " + user.get("total") + " to " + today + " variable.");
 		// Add to the user info
 		user.set("log", "<tr><td>" + date('h:ia') + "</td><td style='text-align: right;'>" + theValue + "</td></tr>\n" + user.get("log") + "\n");
 		// Update the page
@@ -162,7 +162,7 @@ function submitForm() {
 function clearSearch() {
 	field = document.getElementById('searchText');
 	field.value = '';
-	field.style.color = 'black';
+	//field.style.color = 'black';
 }
 
 // Function to add the word "calories" to the search value
