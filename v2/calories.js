@@ -54,7 +54,7 @@ function updatePage() {
 	// Update the total on the page
 	document.getElementById("total").innerHTML = user.get("total");
 	// Update the total from yesterdays page
-	document.getElementById("yesterday").innerHTML = user.get("yesterday");
+	//document.getElementById("yesterday").innerHTML = user.get("yesterday");
 	// Update the report on the page
 	document.getElementById("entries").innerHTML = "<table>\n" + user.get("log") + "\n<table>\n";
 	// Hide the help
